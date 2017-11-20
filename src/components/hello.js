@@ -1,14 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './hello.less';
 
-let Hello = React.createClass({
+class Hello extends React.Component {
     render() {
-        return (
-            <div className="hello-component">
-                Hello, React
+        return <div className="hello-component">
             </div>
-        );
     }
-});
+}
 
 export default Hello;
