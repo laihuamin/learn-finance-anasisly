@@ -15,7 +15,7 @@ class Btn extends React.Component {
         for(let i = 0; i < count; i++) {
             btnNodes[i] = (<span
                 key = {`dot${i}`}
-                className = { "btn" + (i === nowLocal ? "active" : " ")}
+                className = { "btn" + (i === nowLocal ? " active" : " ")}
                 onClick={this.handleClickBtn.bind(this, i)}
             ></span>)
         }
