@@ -14,8 +14,13 @@ class ImgGroup extends React.Component{
         for(let i = 0; i < count; i++) {
             imgNodes[i] = (<div 
                 key={`img${i}`}
-                onclick={this.handleImg.bind(this, i)}
-                className={"img-item" + i === nowLocal ? " active" : ""}>
+                onClick={this.handleImg.bind(this, i)}
+                className={"img-item" + (i === nowLocal ? " " : "")}
+                style={{
+                    left: `${left[i]}%`,
+                    top: `${top[i]}%`,
+                    transform: `rotate(${rorate[i]}deg)`
+                }}>
                 <img src={data[i].img} className="image"/>
                 <h2 className="img-desc">{data[i].title}</h2>
             </div>)
