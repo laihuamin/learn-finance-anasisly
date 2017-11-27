@@ -15,7 +15,11 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
-        extensions: ['.js', '.jsx']  //这样就可以在引用的时候不加扩展名
+        extensions: ['.js', '.jsx'],  //这样就可以在引用的时候不加扩展名
+        alias: {
+            components: path.resolve(__dirname, './src/components'),
+            commons: path.resolve(__dirname, './src/commons')
+        }
     },
     module: {
         rules: [
@@ -65,6 +69,11 @@ module.exports = {
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development')
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['commons'], // 这公共代码的chunk名为'commons'
+            filename: 'dist/js/[name].bundle.js', // 生成后的文件名，虽说用了[name]，但实际上就是'commons.bundle.js'了
+            minChunks: 4
         }),
         extractPlugin
     ]
