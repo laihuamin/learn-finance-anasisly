@@ -36,10 +36,10 @@ class App extends React.Component{
     randomLeft() {
         const left = [];
         for(let i = 0; i < 5; i++){
-            left[i] = Math.floor(Math.random() * 20);
+            left[i] = Math.floor(Math.random() * 20 + 10);
         }
         for(let i = 5; i < 10; i++){
-            left[i] = Math.floor(Math.random() * 20 + 80);
+            left[i] = Math.floor(Math.random() * 20 + 60);
         }
         return left;
     };
