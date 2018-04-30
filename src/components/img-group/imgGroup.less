@@ -1,0 +1,26 @@
+@import '~commons/less/common.less';
+
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .img-item {
+        position: absolute;
+        width: 300/@b;
+        height: 500/@b;
+        .image {
+            width: 300/@b;
+            height: 300/@b;
+        }
+        .img-desc {
+            width: 100%;
+            font-size: 16/@b;
+        }
+    }
+    .active {
+        left: 50%;
+        top: 50%;
+        width: 50%;
+        height: 50%;
+    }
+}
